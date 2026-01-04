@@ -18,8 +18,10 @@ RUN npx prisma generate
 # Build the project
 RUN npm run build
 
-# Copy Prisma engine and schema to dist/pg
-RUN cp src/pg/schema.prisma dist/pg/ && cp src/pg/libquery_engine* dist/pg/
+# Ensure dist/pg exists and copy Prisma engine and schema
+RUN mkdir -p dist/pg && \
+    (cp src/pg/schema.prisma dist/pg/ || cp prisma/schema.prisma dist/pg/) && \
+    cp src/pg/libquery_engine* dist/pg/ || true
 
 # Remove devDependencies to keep image small
 RUN npm prune --production
