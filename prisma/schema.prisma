@@ -1,0 +1,15 @@
+generator client {
+  provider     = "prisma-client"
+  engineType   = "client"
+  moduleFormat = "esm"
+  output       = "../src/pg"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Example {
+  id   String @id @unique
+  text String
+}

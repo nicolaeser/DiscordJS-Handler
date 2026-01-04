@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "commonjs",
+    "lib": ["ES2022", "DOM"],
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "baseUrl": "./",
+    "paths": {
+      "@/pg/*": ["src/pg/*"],
+      "@/structs/*": ["src/structs/*"],
+      "@/utils/*": ["src/utils/*"],
+      "@/handlers/*": ["src/handlers/*"],
+      "@/lib/*": ["src/lib/*"],
+      "@/middlewares/*": ["src/middlewares/*"],
+      "@/types": ["src/types/index.ts"],
+      "@/types/*": ["src/types/*"],
+      "@/api/*": ["src/api/*"]
+    },
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictBindCallApply": true,
+    "strictPropertyInitialization": false,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
+}
